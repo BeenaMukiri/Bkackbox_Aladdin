@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-container h1 {
+            margin: 0;
+        }
+
+        /* Menu Sidebar */
+        .menu-container {
+            background-color: #333;
+            color: white;
+            width: 220px;
+            padding: 20px;
+            position: fixed;
+            top: 80px;
+            /* Adjusted for header */
+            bottom: 0;
+        }
+
+        .menu-container a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .menu-container a:hover {
+            background-color: #575757;
+        }
+
+        /* Main Content (middle part) */
+        .main-content {
+            margin-left: 240px;
+            /* Space for the sidebar */
+            padding: 40px;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Menu Items */
+        .menu-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 150px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 10px;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .logout-btn {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: auto;
+        }
+
+        .logout-btn:hover {
+            background-color: darkred;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Welcome to Your Dashboard</h1>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <div class="menu-container">
+        <a href="#" onclick="alert('Portfolio clicked!')">Portfolio</a>
+        <a href="#" onclick="alert('Payments clicked!')">Payments</a>
+        <a href="#" onclick="alert('Status Check clicked!')">Status Check</a>
+        <a href="#" onclick="alert('Settings clicked!')">Settings</a>
+    </div>
+
+    <div class="main-content">
+        <div class="menu-item">Portfolio</div>
+        <div class="menu-item">Payments</div>
+        <div class="menu-item">Status Check</div>
+        <div class="menu-item">Settings</div>
+    </div>
+
+    <footer>
+        &copy; 2025 Smart Banking
+    </footer>
+
+    <script>
+        // Simulate logout (clearing token or redirecting to login)
+        function logout() {
+            // Here you can remove tokens or session data if stored in localStorage or cookies
+            alert('Logged out successfully!');
+            window.location.href = '/login';  // Redirect to login page
+        }
+    </script>
+
+</body>
+
+</html>
